@@ -131,19 +131,19 @@ input:focus{
 
 
 
-/* Global CSS */
+/* Global CSS - Modern Healthcare Theme */
 
 /* Colours */
 :root {
-    --background-color: #36414c;
-    --primary-color: #ffa00a;
-    --secondary-color: #7574ff;
+    --background-color: #0d9488;
+    --primary-color: #0d9488;
+    --secondary-color: #06b6d4;
     --white-color: #ffffff;
-    --black-color: #000000;
-    --gray-color: #888;
+    --black-color: #0f172a;
+    --gray-color: #64748b;
 
-    --page-head-height: 50px;
-    --navbar-height: 50px;
+    --page-head-height: 52px;
+    --navbar-height: 52px;
 }
 .btn-primary:active,
 .btn-secondary:focus,
@@ -154,10 +154,10 @@ input:focus{
 .btn-primary{
     color: #fff !important;
     background-color: var(--primary-color) !important;
-    border-radius: 0 !important;
+    border-radius: 8px !important;
 }
 .btn-primary:hover{
-    background-color: rgba(255, 120, 10, 0.93) !important;
+    background-color: #0f766e !important;
 }
 /* .btn-secondary{
     background-color: #606060 !important;
@@ -254,7 +254,7 @@ header .form-control:focus{
 
 /* Input Fields */
 input{
-    border-radius: 0 !important;
+    border-radius: 6px !important;
 }
 .form-control{
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
@@ -264,7 +264,7 @@ input{
     outline: 0;
     border: 1px solid var(--primary-color);
     box-shadow: none;
-    background: rgba(255, 160, 10, 0.14) !important;
+    background: rgba(13, 148, 136, 0.08) !important;
 }
 .navbar .navbar-nav a.nav-link{
     color: var(--white-color);
@@ -277,7 +277,7 @@ symbol#icon-small-down{
 
 /* Table */
 .form-grid{
-    border-radius: 0;
+    border-radius: 8px;
     border: 1px solid #bbbbbb;
 }
 .form-grid .grid-heading-row{
@@ -290,7 +290,7 @@ symbol#icon-small-down{
     border-right: 1px solid #d1d8dd;
 }
 .form-grid .grid-row:hover{
-    background: rgba(255, 152, 0, 0.15);
+    background: rgba(13, 148, 136, 0.08);
 }
 
 /* Heading Color */
@@ -334,4 +334,21 @@ symbol#icon-small-down{
 .filter-button span.filter-icon svg.icon{
     stroke: var(--white-color);
 } */
+
+/* Modern touches */
+.widget,
+.modal-content {
+    border-radius: 8px !important;
+}
+.page-container .widget,
+.card {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
+}
+.layout-side-section .sidebar-label {
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+.form-control {
+    padding: 8px 12px;
+}
 
