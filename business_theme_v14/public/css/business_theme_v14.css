@@ -235,22 +235,29 @@ header .form-control:focus{
 
 /* Left sidebar - orange background, flush to the left edge of the viewport */
 
+/* Kill every layer of left spacing from body down to the sidebar column */
+#body,
+#body_div,
+.main-section,
+#page-container,
+.page-body,
+.page-body > .container,
+.page-body > .container-fluid {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+.page-body > .row,
+.page-body > .container > .row,
+.main-section > .row,
+#page-container > .row {
+    margin-left: 0 !important;
+}
+
 /* The sidebar column itself (Bootstrap grid col) */
 .col-lg-2.layout-side-section,
 .layout-side-section:first-child {
     padding-left: 0 !important;
     padding-right: 0 !important;
-    margin-left: 0 !important;
-}
-
-/* The container and row wrapping the sidebar */
-.container,
-.container-fluid {
-    padding-left: 0 !important;
-}
-.page-body > .row,
-.page-body > .container > .row,
-body[data-route] .row:first-child {
     margin-left: 0 !important;
 }
 
