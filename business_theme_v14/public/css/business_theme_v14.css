@@ -233,7 +233,33 @@ header .form-control:focus{
 
 
 
-/* Sidebar */
+/* Left sidebar - same color as navbar, flush left (no left margin) */
+.standard-sidebar,
+.page-sidebar,
+[data-type="sidebar"],
+.desk-sidebar,
+.sidebar-group,
+.app-sidebar,
+.sidebar-container,
+div[class*="sidebar"]:not(.layout-side-section),
+nav.sidebar,
+aside.sidebar {
+    background: var(--background-color) !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    left: 0 !important;
+}
+.standard-sidebar .sidebar-item a,
+.standard-sidebar a,
+.page-sidebar .sidebar-item a,
+.page-sidebar a,
+.app-sidebar a,
+.sidebar-container a {
+    color: var(--white-color) !important;
+}
+
+
+/* Form/layout sidebar (right side labels) */
 .layout-side-section .sidebar-label{
     color: var(--primary-color);
 }
