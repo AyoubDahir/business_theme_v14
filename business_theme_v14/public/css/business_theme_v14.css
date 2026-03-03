@@ -1,193 +1,146 @@
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-    width: 6px;
-}
-*::-webkit-scrollbar-track {
-    background: var(--scroll-bg);
-}
-*::-webkit-scrollbar-thumb {
-    background-color: var(--scroll-color);
-    border-radius: 20px;
-}
-* {
-    scrollbar-width: thin;
-    scrollbar-color: var(--scroll-color) var(--scroll-bg);
-}
-.awesomplete .input-with-feedback {
-    border: 1px solid var(--border-color);
-}
-.form-control {
-    border: 1px solid var(--border-color);
-}
-.search-bar .awesomplete input {
-    background-color: var(--bg-color)
-}
-.modal-backdrop{
-    background-color: #2c436b !important;
-}
-.widget .widget-head .widget-title {
-    font-size: var(--text-base);
-}
-.comment-box .comment-input-header, .form-dashboard-section .section-head, .form-section .section-head, .head-title {
-    font-size: var(--text-base);
-    font-weight: 600;
-}
-.comment-box .comment-input-container .ql-editor {
-    border: 1px solid var(--border-color);
-}
-.duration-picker .duration-input {
-    background-color: var(--bg-color);
-    border: 1px solid var(--border-color);
-}
-.control-label {
-    font-weight: 500;
-}
-[data-theme="dark"] {
-    --bg-color: var(--gray-900);
-    --disabled-control-bg: var(--gray-900);
-    --border-color: #1c2126;
-    --margin-lg : 15px;
-    --text-bold: 600;
-    --scroll-bg: #161a1f;
-    --scroll-color: #1c2126;
-}
+/* ============================================================
+   Alihsan ERP — SomaliTech-Inspired Dark Dashboard Theme
+   Palette: slate-950 base, indigo-600 primary, purple accents
+   ============================================================ */
 
-[data-theme="light"] {
-    --bg-color: #f2f5fa;
-    --text-bold: 600;
-    --control-bg : #fff;
-    --control-bg-on-gray: #d4dcea;
-    --disabled-control-bg: #f2f5fa;
-    --heading-color: #333;
-    --border-color:#e3e8f1;
-    --avatar-frame-bg: #dde2ea;
-    --margin-lg: 15px;
-    --sidebar-select-color: #d4dcea;
-    --awesomplete-hover-bg: #d4dcea;
-    --scroll-bg: #eef1f5;
-    --scroll-color: #d9dfe6;
-}
+/* Scrollbar */
+*::-webkit-scrollbar { width: 6px; height: 6px; }
+*::-webkit-scrollbar-track { background: var(--scroll-bg); }
+*::-webkit-scrollbar-thumb { background-color: var(--scroll-color); border-radius: 20px; }
+* { scrollbar-width: thin; scrollbar-color: var(--scroll-color) var(--scroll-bg); }
 
-
-/*****  OVERRIDDEN CSS  *****/
-
-/* Heading Text Color */
-/*
-.page-head{
-    background: #7C7BAD !important;
-    background: #7C7BAD !important;
-}
-.page-container{
-    background: url(/web_responsive/static/src/css/../img/home-menu-bg-overlay.svg), linear-gradient(to bottom, #7C7BAD, #c3c2cc); !important;
-    background-color: url(/web_responsive/static/src/css/../img/home-menu-bg-overlay.svg), linear-gradient(to bottom, #7C7BAD, #c3c2cc); !important;
-}
-h3.ellipsis.title-text,
-.widget-group .widget-group-head .widget-group-title,
-.layout-side-section .sidebar-label{
-    color: white !important;
-}
-
-*/
-/* Form Input Focus *//*
-
-input:focus{
-    border: 1px solid #7C7BAD !important;
-}
-.form-control:focus{
-    box-shadow: 0 0 0 2px rgba(94, 108, 162, 0.25) !important;
-}
-
-*/
-/* Div Padding *//*
-
-.widget.widget-shadow.shortcut-widget-box{
-    padding: 5px 10px;
-}
-
-*/
-/* List Design *//*
-
-.indicator-pill, .indicator-pill-right{
-    padding: 7px 8px;
-    height: unset;
-}
-
-*/
-/* Collapse Div Padding *//*
-
-.section-head.collapsed{
-    padding: 2px 4px;
-}
-
-*/
-/* Dropdown List Hover *//*
-
-.awesomplete > ul > li:hover, .awesomplete > ul > li[aria-selected="true"]{
-    background-color: #a492bf;
-}*/
-
-
-
-
-
-
-/* Global CSS - Modern Healthcare Theme (Alihsan) */
-
-/* Colours */
+/* ── Global custom properties ── */
 :root {
-    --background-color: #ea580c;
-    --primary-color: #ea580c;
-    --secondary-color: #f97316;
-    --white-color: #ffffff;
-    --black-color: #0f172a;
-    --gray-color: #64748b;
+    --st-bg-base: #0f172a;
+    --st-bg-surface: #1e293b;
+    --st-bg-elevated: #334155;
+    --st-sidebar-bg: rgba(15, 23, 42, 0.6);
+    --st-sidebar-width: 72px;
+    --st-navbar-bg: rgba(15, 23, 42, 0.7);
+    --st-primary: #4f46e5;
+    --st-primary-hover: #4338ca;
+    --st-primary-light: rgba(79, 70, 229, 0.15);
+    --st-accent-gradient: linear-gradient(135deg, #4f46e5, #7c3aed, #a855f7);
+    --st-text-primary: #f1f5f9;
+    --st-text-secondary: #94a3b8;
+    --st-text-muted: #64748b;
+    --st-border: rgba(255, 255, 255, 0.06);
+    --st-border-active: rgba(79, 70, 229, 0.4);
+    --st-radius-sm: 8px;
+    --st-radius-md: 12px;
+    --st-radius-lg: 16px;
+    --st-radius-xl: 24px;
+    --st-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    --st-shadow-lg: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
+    --st-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
+    --background-color: var(--st-primary);
+    --primary-color: var(--st-primary);
     --page-head-height: 52px;
-    --navbar-height: 52px;
+    --navbar-height: 56px;
 }
-.btn-primary:active,
-.btn-secondary:focus,
-.btn-secondary:active,
-.btn-secondary:focus{
+
+/* Override Frappe theme variables for dark mode */
+[data-theme="light"], [data-theme="dark"], body {
+    --bg-color: var(--st-bg-base);
+    --fg-color: var(--st-bg-surface);
+    --text-color: var(--st-text-primary);
+    --text-muted: var(--st-text-secondary);
+    --text-light: var(--st-text-muted);
+    --heading-color: var(--st-text-primary);
+    --border-color: var(--st-border);
+    --control-bg: var(--st-bg-surface);
+    --control-bg-on-gray: var(--st-bg-elevated);
+    --disabled-control-bg: var(--st-bg-surface);
+    --awesomplete-hover-bg: var(--st-primary-light);
+    --sidebar-select-color: var(--st-primary-light);
+    --scroll-bg: var(--st-bg-base);
+    --scroll-color: var(--st-bg-elevated);
+    --card-bg: var(--st-bg-surface);
+    --modal-bg: var(--st-bg-surface);
+    --avatar-frame-bg: var(--st-bg-elevated);
+    --gray-50: #1e293b;
+    --gray-100: #1e293b;
+    --gray-200: #334155;
+    --gray-300: #475569;
+    --gray-500: #64748b;
+    --gray-600: #94a3b8;
+    --gray-700: #cbd5e1;
+    --gray-800: #e2e8f0;
+    --gray-900: #f1f5f9;
+    --margin-lg: 15px;
+    --text-bold: 600;
+}
+
+body {
+    background: var(--st-bg-base) !important;
+    color: var(--st-text-primary) !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   1. NAVBAR — Glassmorphism dark header
+   ═══════════════════════════════════════════ */
+.navbar,
+.navbar-expand {
+    background: var(--st-navbar-bg) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border-bottom: 1px solid var(--st-border) !important;
+    height: var(--navbar-height) !important;
     box-shadow: none !important;
 }
-.btn-primary{
-    color: #fff !important;
-    background-color: var(--primary-color) !important;
-    border-radius: 8px !important;
+
+.navbar .navbar-nav a.nav-link {
+    color: var(--st-text-secondary) !important;
+    transition: var(--st-transition);
+    font-weight: 500;
 }
-.btn-primary:hover{
-    background-color: #c2410c !important;
+.navbar .navbar-nav a.nav-link:hover {
+    color: var(--st-text-primary) !important;
 }
-/* .btn-secondary{
-    background-color: #606060 !important;
-    color: var(--white-color) !important;
-    border-radius: 0 !important;
-    transition: background-color ease-in-out .15s;
-}
-.btn-secondary:hover{
-    background-color: rgba(255, 120, 10, 0.93) !important;
-} */
-.page-head,
-.page-head .page-head-content{
-    height: var(--page-head-height);
-}
-.page-head,
-.page-head .page-head-content{
-    top: var(--page-head-height);
+.navbar .navbar-home img,
+.navbar .navbar-home svg {
+    filter: brightness(0) invert(1) !important;
 }
 
-
-
-/* Top Header */
-.navbar{
-    background: var(--background-color) !important;
-    height: var(--navbar-height);
+/* Search in navbar */
+.search-bar .awesomplete input,
+#navbar-search,
+header .form-control {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid var(--st-border) !important;
+    border-radius: var(--st-radius-xl) !important;
+    color: var(--st-text-primary) !important;
+    height: 36px;
+    padding-left: 14px;
+    transition: var(--st-transition);
 }
-.navbar-expand{
-    background-color: var(--background-color);
+.search-bar .awesomplete input:focus,
+#navbar-search:focus,
+header .form-control:focus {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: var(--st-border-active) !important;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2) !important;
+    color: white !important;
 }
-#navbar-breadcrumbs > li > a::before{
+header .form-control::placeholder {
+    color: var(--st-text-muted) !important;
+}
+
+/* Breadcrumbs */
+#navbar-breadcrumbs a {
+    color: var(--st-text-secondary) !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+#navbar-breadcrumbs a:hover {
+    color: white !important;
+}
+#navbar-breadcrumbs > li > a::before {
+    color: var(--st-text-muted) !important;
     font-family: FontAwesome;
     font-weight: normal;
     font-style: normal;
@@ -195,54 +148,553 @@ input:focus{
     -webkit-font-smoothing: antialiased;
     margin-right: .3em;
     display: inline-block;
-
     font-size: 24px;
     transition: 0.2s;
     position: relative;
     top: 3px;
     content: "\f105";
     margin-right: 10px;
-    color: var(--white-color);
 }
-#navbar-breadcrumbs a{
-    color: var(--white-color);
-    text-decoration: none;
-}
-header .form-control{
-    color: var(--white-color);
-}
-header .form-control:focus{
-    border: 0;
-}
-.search-bar .awesomplete input{
-    height: 32px;
-}
-/*#navbar-search{
-    width: 300px;
-    background-color: rgb(65, 78, 90);
-    border-radius: 0px;
-    color: #f9f9f9;
-    border: none;
-}*/
-header ul#navbar-breadcrumbs{
+header ul#navbar-breadcrumbs {
     margin-top: -8px;
 }
-header .form-control:focus{
-    background-color: var(--white-color) !important;
+
+/* Notification bell */
+span.notifications-seen use,
+symbol#icon-small-down {
+    fill: var(--st-text-secondary) !important;
+}
+
+/* Avatar in navbar */
+.navbar .avatar,
+.navbar .avatar-frame {
+    border-radius: var(--st-radius-md) !important;
+    ring: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 
+/* ═══════════════════════════════════════════
+   2. SIDEBAR — Dark icon-style navigation
+   ═══════════════════════════════════════════ */
+.col-lg-2.layout-side-section,
+.layout-side-section:first-child {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: var(--st-sidebar-width) !important;
+    flex: 0 0 var(--st-sidebar-width) !important;
+    width: var(--st-sidebar-width) !important;
+}
 
-/* Left sidebar - orange background, flush to the left edge of the viewport */
+.container,
+.container-fluid {
+    padding-left: 0 !important;
+}
+.page-body > .row,
+.page-body > .container > .row,
+body[data-route] .row:first-child {
+    margin-left: 0 !important;
+}
 
-/* Kill every layer of left spacing from body down to the sidebar column */
+.standard-sidebar,
+.desk-sidebar,
+.module-sidebar {
+    background: var(--st-sidebar-bg) !important;
+    backdrop-filter: blur(24px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+    border-right: 1px solid var(--st-border) !important;
+    margin: 0 !important;
+    padding: 16px 0 !important;
+    border-radius: 0 !important;
+    min-height: calc(100vh - var(--navbar-height)) !important;
+    overflow-x: hidden !important;
+}
+
+/* Sidebar links */
+.standard-sidebar a,
+.desk-sidebar a,
+.module-sidebar a {
+    color: var(--st-text-muted) !important;
+    padding: 12px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    transition: var(--st-transition);
+    border-radius: var(--st-radius-md) !important;
+    margin: 2px 8px !important;
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    position: relative;
+}
+.standard-sidebar a:hover,
+.desk-sidebar a:hover,
+.module-sidebar a:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: var(--st-text-secondary) !important;
+}
+.standard-sidebar .selected a,
+.standard-sidebar a.active,
+.desk-sidebar a.active {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: white !important;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+.standard-sidebar .selected a::before,
+.standard-sidebar a.active::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 24px;
+    background: var(--st-primary);
+    border-radius: 0 4px 4px 0;
+}
+
+/* Sidebar labels */
+.standard-sidebar .sidebar-label,
+.sidebar-group .sidebar-label {
+    color: var(--st-text-muted) !important;
+    padding: 8px 10px 4px !important;
+    font-size: 0.6rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15em !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+}
+
+/* Sidebar icons */
+.standard-sidebar .sidebar-label svg,
+.standard-sidebar a svg,
+.desk-sidebar a svg,
+.module-sidebar a svg {
+    stroke: var(--st-text-muted) !important;
+}
+.standard-sidebar .selected a svg,
+.standard-sidebar a.active svg {
+    stroke: white !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   3. PAGE HEAD — Sleek dark header bar
+   ═══════════════════════════════════════════ */
+.page-head,
+.page-head .page-head-content {
+    background: var(--st-bg-base) !important;
+    border-bottom: 1px solid var(--st-border) !important;
+    height: var(--page-head-height);
+}
+.page-head .title-text,
+.page-head h3 {
+    color: var(--st-text-primary) !important;
+    font-weight: 700;
+}
+
+
+/* ═══════════════════════════════════════════
+   4. WORKSPACE/DESK — Dark gradient canvas
+   ═══════════════════════════════════════════ */
+.page-container,
+#page-container,
+.main-section,
+#body,
+#body_div {
+    background: radial-gradient(circle at 20% 20%, var(--st-bg-surface) 0%, var(--st-bg-base) 100%) !important;
+}
+.layout-main-section-wrapper,
+.layout-main-section {
+    background: transparent !important;
+}
+
+/* Module/Workspace cards */
+.widget.shortcut-widget-box,
+.widget.onboarding-widget-box,
+.widget[data-widget-name] {
+    background: var(--st-bg-surface) !important;
+    border: 1px solid var(--st-border) !important;
+    border-radius: var(--st-radius-lg) !important;
+    box-shadow: var(--st-shadow) !important;
+    transition: var(--st-transition);
+    overflow: hidden;
+}
+.widget.shortcut-widget-box:hover,
+.widget[data-widget-name]:hover {
+    border-color: var(--st-border-active) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--st-shadow-lg) !important;
+}
+
+/* Widget heads & titles */
+.widget .widget-head .widget-title {
+    font-size: var(--text-base);
+    color: var(--st-text-primary) !important;
+    font-weight: 700;
+}
+.widget-group .widget-group-head .widget-group-title {
+    color: var(--st-text-primary) !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+}
+
+/* Shortcut tiles — gradient icon style */
+.shortcut-widget-box .widget-head .widget-title {
+    font-weight: 700;
+    color: var(--st-text-primary) !important;
+}
+.shortcut-widget-box .indicator-pill,
+.shortcut-widget-box .indicator-pill-right {
+    background: var(--st-primary-light) !important;
+    color: #a5b4fc !important;
+    border-radius: 100px !important;
+    font-weight: 700;
+    font-size: 0.7rem;
+    padding: 4px 10px;
+}
+
+/* Workspace header titles */
+.workspace-header .widget-head .title-text,
+h3.ellipsis.title-text {
+    color: var(--st-text-primary) !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   5. BUTTONS — Indigo primary with glow
+   ═══════════════════════════════════════════ */
+.btn-primary {
+    background: var(--st-accent-gradient) !important;
+    border: none !important;
+    color: white !important;
+    border-radius: var(--st-radius-md) !important;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3) !important;
+    transition: var(--st-transition);
+}
+.btn-primary:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 6px 25px rgba(79, 70, 229, 0.4) !important;
+    transform: translateY(-1px);
+}
+.btn-primary:active,
+.btn-primary:focus {
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3) !important;
+}
+
+.btn-default,
+.btn-secondary {
+    background: var(--st-bg-surface) !important;
+    border: 1px solid var(--st-border) !important;
+    color: var(--st-text-secondary) !important;
+    border-radius: var(--st-radius-md) !important;
+    font-weight: 500;
+    transition: var(--st-transition);
+}
+.btn-default:hover,
+.btn-secondary:hover {
+    background: var(--st-bg-elevated) !important;
+    border-color: var(--st-border-active) !important;
+    color: var(--st-text-primary) !important;
+}
+
+.btn-primary-dark {
+    background: var(--st-bg-elevated) !important;
+    color: var(--st-text-primary) !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   6. FORMS & INPUTS — Dark glass fields
+   ═══════════════════════════════════════════ */
+input,
+select,
+textarea {
+    border-radius: var(--st-radius-sm) !important;
+}
+.form-control,
+.input-with-feedback {
+    background: var(--st-bg-surface) !important;
+    border: 1px solid var(--st-border) !important;
+    color: var(--st-text-primary) !important;
+    border-radius: var(--st-radius-sm) !important;
+    transition: var(--st-transition);
+    padding: 8px 12px;
+}
+.form-control:focus,
+.input-with-feedback:focus {
+    background: rgba(79, 70, 229, 0.06) !important;
+    border-color: var(--st-primary) !important;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15) !important;
+    outline: none;
+    color: var(--st-text-primary) !important;
+}
+.form-control::placeholder {
+    color: var(--st-text-muted) !important;
+}
+.control-label {
+    font-weight: 600;
+    color: var(--st-text-secondary) !important;
+    font-size: 0.8rem;
+}
+
+.awesomplete .input-with-feedback {
+    border: 1px solid var(--st-border);
+}
+
+
+/* ═══════════════════════════════════════════
+   7. MODALS & DIALOGS — Dark glass panels
+   ═══════════════════════════════════════════ */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(4px) !important;
+}
+.modal-content {
+    background: var(--st-bg-surface) !important;
+    border: 1px solid var(--st-border) !important;
+    border-radius: var(--st-radius-lg) !important;
+    box-shadow: var(--st-shadow-lg) !important;
+    color: var(--st-text-primary) !important;
+}
+.modal-header {
+    border-bottom: 1px solid var(--st-border) !important;
+}
+.modal-footer {
+    border-top: 1px solid var(--st-border) !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   8. TABLES & LISTS — Dark rows with hover
+   ═══════════════════════════════════════════ */
+.form-grid {
+    border-radius: var(--st-radius-md) !important;
+    border: 1px solid var(--st-border) !important;
+    overflow: hidden;
+}
+.form-grid .grid-heading-row {
+    background: var(--st-bg-surface) !important;
+    border-bottom: 1px solid var(--st-border) !important;
+}
+.grid-heading-row {
+    border-bottom: 2px solid var(--st-primary) !important;
+}
+.grid-row > .row .col {
+    border-right: 1px solid var(--st-border) !important;
+}
+.form-grid .grid-row:hover {
+    background: var(--st-primary-light) !important;
+}
+
+.list-row,
+.list-row-container .list-row {
+    border-bottom: 1px solid var(--st-border) !important;
+    transition: var(--st-transition);
+}
+.list-row:hover {
+    background: var(--st-primary-light) !important;
+}
+.list-row .level-left .list-row-col .ellipsis {
+    color: var(--st-text-primary) !important;
+}
+.list-subject a {
+    color: var(--st-text-primary) !important;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+.list-subject a:hover {
+    color: #818cf8 !important;
+}
+
+/* List header */
+.list-row-head {
+    background: var(--st-bg-surface) !important;
+    border-bottom: 2px solid var(--st-primary) !important;
+}
+.list-row-head .list-header-subject .list-row-col {
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.7rem;
+    color: var(--st-text-muted) !important;
+}
+
+/* Status pills */
+.indicator-pill,
+.indicator-pill-right,
+.indicator-pill-round {
+    border-radius: 100px !important;
+    font-weight: 700;
+    font-size: 0.7rem;
+    padding: 4px 10px;
+}
+
+/* Report datatable */
+.datatable .dt-header .dt-cell--header .dt-cell__content {
+    background: var(--st-bg-surface) !important;
+    color: var(--st-text-secondary) !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   9. CARDS & WIDGETS — Elevated dark panels
+   ═══════════════════════════════════════════ */
+.widget,
+.card,
+.frappe-card {
+    background: var(--st-bg-surface) !important;
+    border: 1px solid var(--st-border) !important;
+    border-radius: var(--st-radius-md) !important;
+    box-shadow: var(--st-shadow) !important;
+}
+.page-container .widget,
+.card {
+    box-shadow: var(--st-shadow) !important;
+}
+
+.comment-box .comment-input-header,
+.form-dashboard-section .section-head,
+.form-section .section-head,
+.head-title {
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: #818cf8 !important;
+}
+.comment-box .comment-input-container .ql-editor {
+    border: 1px solid var(--st-border) !important;
+    background: var(--st-bg-base) !important;
+    color: var(--st-text-primary) !important;
+}
+
+/* Duration picker */
+.duration-picker .duration-input {
+    background: var(--st-bg-surface) !important;
+    border: 1px solid var(--st-border) !important;
+    color: var(--st-text-primary) !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   10. SIDEBAR (RIGHT) — Form layout labels
+   ═══════════════════════════════════════════ */
+.layout-side-section .sidebar-label {
+    color: #818cf8 !important;
+    padding: 8px 12px;
+    border-radius: var(--st-radius-sm);
+    font-weight: 600;
+}
+.sidebar-label svg,
+.layout-side-section .sidebar-label .icon {
+    stroke: #818cf8 !important;
+}
+.list-sidebar-button {
+    background: var(--st-bg-surface) !important;
+    border: 1px solid var(--st-border) !important;
+    color: var(--st-text-secondary) !important;
+    box-shadow: none !important;
+}
+.list-sidebar-button:active,
+.list-sidebar-button:focus {
+    text-decoration: none !important;
+    box-shadow: none !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   11. DROPDOWNS & MENUS
+   ═══════════════════════════════════════════ */
+.dropdown-menu {
+    background: var(--st-bg-surface) !important;
+    border: 1px solid var(--st-border) !important;
+    border-radius: var(--st-radius-md) !important;
+    box-shadow: var(--st-shadow-lg) !important;
+    backdrop-filter: blur(12px) !important;
+}
+.dropdown-item,
+.dropdown-menu a {
+    color: var(--st-text-secondary) !important;
+    transition: var(--st-transition);
+}
+.dropdown-item:hover,
+.dropdown-menu a:hover {
+    background: var(--st-primary) !important;
+    color: white !important;
+    border-radius: var(--st-radius-sm);
+}
+
+.awesomplete > ul {
+    background: var(--st-bg-surface) !important;
+    border: 1px solid var(--st-border) !important;
+    border-radius: var(--st-radius-md) !important;
+    box-shadow: var(--st-shadow-lg) !important;
+}
+.awesomplete > ul > li:hover,
+.awesomplete > ul > li[aria-selected="true"] {
+    background: var(--st-primary) !important;
+    color: white !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   12. MISC — Global polish
+   ═══════════════════════════════════════════ */
+
+/* Links */
+a {
+    color: #818cf8;
+}
+a:hover {
+    color: #a5b4fc;
+}
+
+/* Like button */
+.like-active-item use {
+    fill: #f472b6 !important;
+}
+
+/* Frappe footer */
+.web-footer {
+    background: var(--st-bg-base) !important;
+    border-top: 1px solid var(--st-border) !important;
+    color: var(--st-text-muted) !important;
+}
+
+/* Desk page backgrounds */
+.desk-page,
+.module-page,
+body[data-route^="Workspaces"] .layout-main-section,
+body[data-route=""] .layout-main-section {
+    background: radial-gradient(circle at 20% 20%, var(--st-bg-surface) 0%, var(--st-bg-base) 100%) !important;
+}
+
+/* Frappe control value */
+.frappe-control .control-value,
+.frappe-control .control-label {
+    color: var(--st-text-primary) !important;
+}
+
+/* Form layout sections */
+.form-section,
+.form-dashboard-section,
+.frappe-control {
+    color: var(--st-text-primary) !important;
+}
+.form-section .section-head {
+    color: #818cf8 !important;
+}
+
+/* Page body padding fix */
 #body,
 #body_div,
 .main-section,
-#page-container,
-.page-body,
-.page-body > .container,
-.page-body > .container-fluid {
+#page-container {
     padding-left: 0 !important;
     margin-left: 0 !important;
 }
@@ -253,172 +705,28 @@ header .form-control:focus{
     margin-left: 0 !important;
 }
 
-/* The sidebar column itself (Bootstrap grid col) */
-.col-lg-2.layout-side-section,
-.layout-side-section:first-child {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-left: 0 !important;
+/* Tooltip */
+.tooltip-inner {
+    background: var(--st-bg-elevated) !important;
+    border-radius: var(--st-radius-sm) !important;
+    font-weight: 500;
 }
 
-/* The sidebar elements */
-.standard-sidebar,
-.desk-sidebar,
-.module-sidebar {
-    background: var(--background-color) !important;
-    margin: 0 !important;
-    padding: 8px 0 !important;
-    border-radius: 0 !important;
-    min-height: calc(100vh - var(--navbar-height) - var(--page-head-height));
+/* Custom animation for workspace tiles */
+@keyframes loading {
+    0% { width: 0; }
+    50% { width: 100%; }
+    100% { width: 0; }
 }
 
-/* Sidebar links - white text with comfortable padding */
-.standard-sidebar a,
-.desk-sidebar a,
-.module-sidebar a {
-    color: var(--white-color) !important;
-    padding: 8px 16px !important;
-    display: block;
+/* Print — revert to light for paper */
+@media print {
+    body,
+    .page-container,
+    .layout-main-section,
+    .form-section,
+    .modal-content {
+        background: white !important;
+        color: #1a1a1a !important;
+    }
 }
-.standard-sidebar a:hover,
-.desk-sidebar a:hover,
-.module-sidebar a:hover {
-    background: rgba(255,255,255,0.15) !important;
-    text-decoration: none !important;
-}
-.standard-sidebar .selected a,
-.standard-sidebar a.active {
-    background: rgba(255,255,255,0.2) !important;
-    font-weight: 600;
-}
-
-/* Sidebar category/group headings */
-.standard-sidebar .sidebar-label,
-.sidebar-group .sidebar-label {
-    color: rgba(255,255,255,0.7) !important;
-    padding: 8px 16px 4px !important;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-
-/* Form/layout sidebar (right side labels) */
-.layout-side-section .sidebar-label{
-    color: var(--primary-color);
-}
-.sidebar-label svg,
-.layout-side-section .sidebar-label .icon{
-    stroke: var(--primary-color);
-}
-.list-sidebar-button{
-    background-color: #c8c4c4 !important;
-    box-shadow: none !important;
-}
-.list-sidebar-button:active,
-.list-sidebar-button:focus{
-    text-decoration: none !important;
-    box-shadow: none !important;
-}
-
-
-/* Input Fields */
-input{
-    border-radius: 6px !important;
-}
-.form-control{
-    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-    background-color: #f2f2f2 !important;
-}
-.form-control:focus{
-    outline: 0;
-    border: 1px solid var(--primary-color);
-    box-shadow: none;
-    background: rgba(234, 88, 12, 0.08) !important;
-}
-.navbar .navbar-nav a.nav-link{
-    color: var(--white-color);
-}
-span.notifications-seen use,
-symbol#icon-small-down{
-    fill: var(--white-color);
-}
-
-
-/* Table */
-.form-grid{
-    border-radius: 8px;
-    border: 1px solid #bbbbbb;
-}
-.form-grid .grid-heading-row{
-    background-color: #f4f4f4;
-}
-.grid-heading-row{
-    border-bottom: 1px solid var(--primary-color);
-}
-.grid-row > .row .col{
-    border-right: 1px solid #d1d8dd;
-}
-.form-grid .grid-row:hover{
-    background: rgba(234, 88, 12, 0.08);
-}
-
-/* Heading Color */
-.head-title, .form-section .section-head, .form-dashboard-section .section-head, .comment-box .comment-input-header{
-    color: var(--primary-color);
-}
-
-/* Lists */
-.list-subject a{
-    text-decoration: none;
-    transition: 0.3s;
-}
-.list-subject a:hover{
-    color: var(--secondary-color);
-}
-
-
-/* Report Table */
-.datatable .dt-header .dt-cell--header .dt-cell__content{
-    background-color: #f4f4f4;
-}
-
-
-/* Buttons CSS
-.filter-button,
-.sort-selector-button,
-.btn-order{
-    background-color: #ea7272 !important;
-    color: var(--white-color) !important;
-    transition: 0.3s;
-    border-radius: 0 !important;
-}
-.filter-button:hover,
-.sort-selector-button:hover,
-.btn-order:hover{
-    background-color: #c83b3b !important;
-}
-.filter-button span.filter-icon{
-    color: var(--white-color);
-}
-.filter-button span.filter-icon svg.icon{
-    stroke: var(--white-color);
-} */
-
-/* Modern touches */
-.widget,
-.modal-content {
-    border-radius: 8px !important;
-}
-.page-container .widget,
-.card {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
-}
-.layout-side-section .sidebar-label {
-    padding: 8px 12px;
-    border-radius: 6px;
-}
-.form-control {
-    padding: 8px 12px;
-}
-
